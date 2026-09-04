@@ -1,3 +1,1 @@
-#CONTENIDO DEL REPOSITORIO PROYECTO DE METODOS DE ORDENAMIENTO
-
-<img width="677" height="388" alt="image" src="https://github.com/user-attachments/assets/2340117a-32a8-4188-a112-b82d7c6e3efb" />
+<img width="470" height="231" alt="image" src="https://github.com/user-attachments/assets/6134de2c-1ca4-4bf9-a6d4-41cd04de339e" />
