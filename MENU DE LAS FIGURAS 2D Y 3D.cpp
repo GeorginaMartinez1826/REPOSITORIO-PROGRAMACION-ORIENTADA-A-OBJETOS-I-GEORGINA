@@ -99,10 +99,10 @@ class Triangulo
         cout<<"      La figura es: "<<endl;
         for(i=1; i<=base; i++) {
             for(j=i; j<base; j++) {
-                cout<<"  "; 
+                cout<<" "; 
             }
-            for(k=1; k<=(2*i-1); k++) {
-                cout<<" *";
+            for(k=1; k<=i; k++) {
+                cout<<"* ";
             }
             cout<<endl;
         }
@@ -505,7 +505,7 @@ class Romboide
             }
             // Asteriscos de la base
             for (int j = 0; j < base4; j++) {
-                cout << "x";
+                cout << "*";
             }
             cout << endl;
         }
@@ -560,15 +560,16 @@ class Trapecio
         int diferencia = baseMayor - baseMenor;
         // Cuánto se reduce por cada nivel de altura
         double paso = (double)diferencia / (alturab - 1);
+
         for (int i = 0; i < alturab; i++) {
             // Número de asteriscos en esta fila
-            int ancho = baseMayor - (int)(paso * i);
-            // Espacios para centrar el trapecio
+            int ancho = baseMenor + (int)(paso * i);
             int espacios = (baseMayor - ancho) / 2;
-        for (int j = 0; j < espacios; j++) cout << " ";
+            for (int j = 0; j < espacios; j++) cout << " ";
             for (int j = 0; j < ancho; j++) cout << "*";
                  cout << endl;
         }
+        // Ejemplo (12, 6, 4) o (8, 4, 3)
     }
     
     void limpiar() {
@@ -589,7 +590,7 @@ class Cubo
     }
     
     void imprimirArea() {
-    cout<<"      El área es: "<<area;
+    cout<<"      El área de la superficie total es: "<<area;
     }
     void imprimirPerimetro() {
     cout<<"      El perímetro es: "<<perimetro;
@@ -626,7 +627,7 @@ class Cubo
     }
     
     void menuCaractSolid() {
-        cout<<"      1. Área"<<endl;
+        cout<<"      1. Área de la superficie total"<<endl;
         cout<<"      2. Perímetro"<<endl;
         cout<<"      3. Volumen"<<endl;
         cout<<"      4. Diagonal"<<endl;
@@ -655,7 +656,7 @@ class Octaedro
     }
     
     void imprimirArea() {
-    cout<<"      El área es: "<<area;
+    cout<<"      El área de la superficie total es: "<<area;
     }
     void imprimirPerimetro() {
     cout<<"      El perímetro es: "<<perimetro;
@@ -715,7 +716,7 @@ class Paralelepipedo
     }
     
     void imprimirArea() {
-    cout<<"      El área es: "<<area;
+    cout<<"      El área de la superficie total es: "<<area;
     }
     void imprimirPerimetro() {
     cout<<"      El perímetro es: "<<perimetro;
@@ -773,7 +774,7 @@ class Cilindro
     }
     
     void imprimirArea() {
-    cout<<"      El área es: "<<area<<"π";
+    cout<<"      El área de la superficie total es: "<<area<<"π";
     }
     void imprimirPerimetro() {
     cout<<"      El perimetro de su forma plana es: "<<peri<<" + "<<perimetro<<"π";
@@ -820,7 +821,7 @@ class Esfera
     }
     
     void imprimirArea() {
-    cout<<"      El área es: "<<area<<"π";
+    cout<<"      El área de la superficie total es: "<<area<<"π";
     }
     void imprimirVolumen() {
     cout<<"      El volumen es: "<<volumen<<"π";
@@ -875,7 +876,7 @@ int main()
     int a, b;
     Cuadrado lado_a = Cuadrado();
     Cuadrado resultado = Cuadrado();
-    lado_a.limpiar();
+    
     Triangulo base_a = Triangulo();
     Triangulo resultadot = Triangulo();
     
@@ -940,6 +941,7 @@ int main()
         {
           do 
           {
+            cout<<endl;
             cout<<"  ---Seleccionó figuras 2D--- "<<endl;
             cout<<"  1. Cuadrado"<<endl;
             cout<<"  2. Triangulo equilatero"<<endl;
@@ -1453,7 +1455,7 @@ int main()
                             lado7_a.ingresarLado7();
                             cout<<endl;
                             resultadoHep = lado7_a.heptagonoArea(lado7_a);
-                            resultado.imprimirArea();
+                            resultadoHep.imprimirArea();
                             cout<<endl;
                             break;
                             
@@ -1490,7 +1492,7 @@ int main()
                             lado7_a.ingresarLado7();
                             cout<<endl;
                             resultadoHep = lado7_a.heptagonoArea(lado7_a);
-                            resultado.imprimirArea();
+                            resultadoHep.imprimirArea();
                             cout<<endl;
                             resultadoHep = lado7_a.heptagonoPerimetro(lado7_a);
                             resultadoHep.imprimirPerimetro();
@@ -1676,7 +1678,7 @@ int main()
                 
                 case 10: 
                 {
-                cout<<"    ===== TRAPECIO ===== "<<endl;
+                    cout<<"    ===== TRAPECIO ===== "<<endl;
                     lado_a.menuCaractFig();
                     cin>>caracteristicasTrapec;
                     cout<<endl;
@@ -1789,6 +1791,7 @@ int main()
         {
           do 
           {
+            cout<<endl;
             cout<<"  ---Seleccionó figuras 3D--- "<<endl;
             cout<<"  1. Hexaedro regular o cubo"<<endl;
             cout<<"  2. Octaedro regular"<<endl;
@@ -2095,7 +2098,7 @@ int main()
                 case 4: 
                 {
                     cout<<"    ===== CILINDRO  ===== "<<endl;
-                    cout<<"    1. Área"<<endl;
+                    cout<<"    1. Área de la superficie total"<<endl;
                     cout<<"    2. Perímetro"<<endl;
                     cout<<"    3. Volumen"<<endl;
                     cout<<"    4. Todos"<<endl;
@@ -2181,7 +2184,7 @@ int main()
                 case 5: 
                 {
                     cout<<"    ===== ESFERA ===== "<<endl;
-                    cout<<"    1. Área"<<endl;
+                    cout<<"    1. Área de la superficie total"<<endl;
                     cout<<"    2. Volumen"<<endl;
                     cout<<"    3. Todos"<<endl;
                     cout<<"    4. Salir"<<endl;
@@ -2201,7 +2204,6 @@ int main()
                             resultadoEs.imprimirArea();
                             cout<<endl;
                             break;
-                            
                         }
                 
                         case 2: 
@@ -2255,6 +2257,7 @@ int main()
             }
             
             if (solidoGeo >= 1 && solidoGeo <= 5) {
+                cout<<endl;
                 cout<<"   Desea continuar con el programa..."<<endl;
                 cout<<"   1. Elegir otra figura 3D"<<endl;
                 cout<<"   2. Regresar al menu"<<endl;
@@ -2277,12 +2280,10 @@ int main()
             cout<<"      Programa finalizado..."<<endl;
             break;
         }
-        
     }
-    
+
     gener_a.limpiar();
-    
-    
+
   } while (puntos != 3);
   
     return 0;
